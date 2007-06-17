@@ -1,6 +1,6 @@
 %define	name	xmailbox
 %define	version	2.5
-%define	release	%mkrel 22
+%define	release	%mkrel 23
 
 Summary:	An X Window System utility which notifies you of new mail
 Name:		%{name}
