@@ -1,6 +1,6 @@
 %define	name	xmailbox
 %define	version	2.5
-%define	release	21mdk
+%define	release	%mkrel 22
 
 Summary:	An X Window System utility which notifies you of new mail
 Name:		%{name}
@@ -8,11 +8,8 @@ Version:	%{version}
 Release:	%{release}
 License:	MIT
 Group:		Networking/Mail
-BuildRequires:	XFree86-devel xpm-devel X11
+BuildRequires:	libx11-devel libxext-devel libxaw-devel libxmu-devel libxt-devel xpm-devel imake
 Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tar.bz2
-Source11:	%{name}-16.png
-Source12:	%{name}-32.png
-Source13:	%{name}-48.png
 Patch1:		xmailbox-2.2-xpm.patch
 Patch2:		xmailbox-2.4-glibc.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -40,19 +37,22 @@ mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
 
 %{makeinstall_std} install.man
 
-#menu and icons
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%{name}): needs="X11" \
-icon="mail_section.png" \
-section="Internet/Mail" \
-title="Xmailbox" \
-longtitle="Mail notifier" \
-command="%{_prefix}/X11R6/bin/%{name}"
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Xmailbox
+Comment=Mail notifier
+Exec=%{_bindir}/%{name} 
+Icon=mail_section.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Utility;Network;Email;X-MandrivaLinux-Internet-Mail;
 EOF
 
 #(peroyvind) get rid of unpackaged files
-rm -f $RPM_BUILD_ROOT%{_prefix}/X11R6/lib/X11/app-defaults
+rm -f $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults
 
 %post
 %update_menus
@@ -66,9 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc README
-%{_prefix}/X11R6/bin/xmailbox
-%{_prefix}/X11R6/man/man1/xmailbox.1*
-%{_prefix}/X11R6/lib/X11/doc/html/xmailbox.1.html
+%{_bindir}/xmailbox
+%{_mandir}/man1/xmailbox.1*
 %config(noreplace) %{_sysconfdir}/X11/app-defaults/XMailbox
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 
