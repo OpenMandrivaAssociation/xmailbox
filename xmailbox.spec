@@ -52,7 +52,7 @@ Categories=Utility;Network;Email;X-MandrivaLinux-Internet-Mail;
 EOF
 
 #(peroyvind) get rid of unpackaged files
-rm -f $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults
+rm -f $RPM_BUILD_ROOT%{_prefix}/lib/X11/app-defaults
 
 %post
 %update_menus
