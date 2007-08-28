@@ -40,7 +40,6 @@ mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Xmailbox
 Comment=Mail notifier
 Exec=%{_bindir}/%{name} 
