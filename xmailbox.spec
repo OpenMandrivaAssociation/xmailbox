@@ -43,7 +43,7 @@ cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 Name=Xmailbox
 Comment=Mail notifier
 Exec=%{_bindir}/%{name} 
-Icon=mail_section.png
+Icon=mail_section
 Terminal=false
 Type=Application
 StartupNotify=true
