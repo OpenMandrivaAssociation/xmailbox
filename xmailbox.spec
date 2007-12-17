@@ -12,7 +12,6 @@ BuildRequires:	libx11-devel libxext-devel libxaw-devel libxmu-devel libxt-devel 
 Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tar.bz2
 Patch1:		xmailbox-2.2-xpm.patch
 Patch2:		xmailbox-2.4-glibc.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The xmailbox program is an X Window System program which notifies you
