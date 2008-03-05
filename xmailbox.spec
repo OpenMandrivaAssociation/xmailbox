@@ -1,11 +1,10 @@
 %define	name	xmailbox
 %define	version	2.5
-%define	release	%mkrel 23
 
 Summary:	An X Window System utility which notifies you of new mail
 Name:		%{name}
 Version:	%{version}
-Release:	%{release}
+Release:	%mkrel 24
 License:	MIT
 Group:		Networking/Mail
 BuildRequires:	libx11-devel libxext-devel libxaw-devel libxmu-devel libxt-devel xpm-devel imake
