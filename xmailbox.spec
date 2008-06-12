@@ -52,11 +52,15 @@ EOF
 #(peroyvind) get rid of unpackaged files
 rm -f $RPM_BUILD_ROOT%{_prefix}/lib/X11/app-defaults
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
