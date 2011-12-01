@@ -31,8 +31,8 @@ xmkmf
 %make CDEBUGFLAGS="$RPM_OPT_FLAGS"
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_sysconfdir}/X11/wmconfig
 
 %{makeinstall_std} install.man
 
@@ -50,7 +50,7 @@ Categories=Utility;Network;Email;X-MandrivaLinux-Internet-Mail;
 EOF
 
 #(peroyvind) get rid of unpackaged files
-rm -f $RPM_BUILD_ROOT%{_prefix}/lib/X11/app-defaults
+rm -f %{buildroot}%{_prefix}/lib/X11/app-defaults
 
 %if %mdkversion < 200900
 %post
@@ -63,7 +63,7 @@ rm -f $RPM_BUILD_ROOT%{_prefix}/lib/X11/app-defaults
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
