@@ -4,14 +4,13 @@
 Summary:	An X Window System utility which notifies you of new mail
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 30
+Release:	31
 License:	MIT
 Group:		Networking/Mail
 BuildRequires:	pkgconfig(x11) libxext-devel libxaw-devel libxmu-devel libxt-devel xpm-devel imake
 Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tar.bz2
 Patch1:		xmailbox-2.2-xpm.patch
 Patch2:		xmailbox-2.4-glibc.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The xmailbox program is an X Window System program which notifies you
