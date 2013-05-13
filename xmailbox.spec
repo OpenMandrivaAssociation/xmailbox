@@ -7,7 +7,7 @@ Version:	%{version}
 Release:	%mkrel 30
 License:	MIT
 Group:		Networking/Mail
-BuildRequires:	libx11-devel libxext-devel libxaw-devel libxmu-devel libxt-devel xpm-devel imake
+BuildRequires:	pkgconfig(x11) libxext-devel libxaw-devel libxmu-devel libxt-devel xpm-devel imake
 Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tar.bz2
 Patch1:		xmailbox-2.2-xpm.patch
 Patch2:		xmailbox-2.4-glibc.patch
