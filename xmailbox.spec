@@ -4,7 +4,7 @@
 Summary:	An X Window System utility which notifies you of new mail
 Name:		%{name}
 Version:	%{version}
-Release:	36
+Release:	37
 License:	MIT
 Group:		Networking/Mail
 BuildRequires:	pkgconfig(x11) libxext-devel libxaw-devel libxmu-devel libxt-devel xpm-devel imake
