@@ -1,7 +1,7 @@
 Summary:	An X Window System utility which notifies you of new mail
 Name:		xmailbox
 Version:	2.5
-Release:	40
+Release:	41
 License:	MIT
 Group:		Networking/Mail
 BuildRequires:	pkgconfig(x11)
@@ -58,5 +58,5 @@ rm -f %{buildroot}%{_prefix}/lib/X11/app-defaults
 %doc README
 %{_bindir}/xmailbox
 %{_mandir}/man1/xmailbox.1*
-%config(noreplace) %{_sysconfdir}/X11/app-defaults/XMailbox
+%{_datadir}/X11/app-defaults/XMailbox
 %{_datadir}/applications/mandriva-%{name}.desktop
