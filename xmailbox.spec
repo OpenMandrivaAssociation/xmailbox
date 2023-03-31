@@ -1,7 +1,7 @@
 Summary:	An X Window System utility which notifies you of new mail
 Name:		xmailbox
 Version:	2.5
-Release:	41
+Release:	42
 License:	MIT
 Group:		Networking/Mail
 BuildRequires:	pkgconfig(x11)
